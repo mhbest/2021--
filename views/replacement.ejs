@@ -1,0 +1,190 @@
+<% layout('layouts/boilerplate')%>
+
+<style>
+/* Grow Shadow */
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+
+</style>
+
+
+	<div class="container"> 
+		<div class="container d-flex justify-content-center mt-5 row">
+			<h1 class="mb-5" style="text-align:center; font-family:'Dolbomche_B';">
+				&#x1F371 군마트에서 이용할 수 있는 대체식품
+			</h1>
+			
+			<h5 class="mb-5" style="text-align:center; font-size:0.9rem; font-family:'S-CoreDream-3Light';">
+				아래 추천 버튼을 클릭하시면 대체 식단을 자체 알고리즘에 따라 최적화하여 추천해드립니다.
+			</h5>
+			
+			<div class="d-flex row container justify-content-center">
+				<div class="d-flex mb-5 col-6">
+					<button id="button" style="text-align:center; font-size:1.3rem; font-family:'Dolbomche_B'; background-color:#FFC300;" onclick="randomGenerator_wheat(wheat_arr)" class="btn btn-sm mb-4 col-4 hvr-grow-shadow"> 
+        			밀 대체식단 추천 <br><br>Click
+    				</button> 
+    
+    				<img src="../src/logo.png"  class="ml-5 "id="wheat" style="width:250px; height:250px;"/>
+				</div>
+				
+				<div class="d-flex mb-5 col-6">
+					<button id="button" style="text-align:center; font-size:1.3rem; font-family:'Dolbomche_B'; background-color:#FFC300;" onclick="randomGenerator_milk(milk_arr)" class="btn btn-sm mb-4 col-4 hvr-grow-shadow"> 
+        			우유 대체식단 추천  <br><br>Click
+    				</button> 
+    
+    				<img src="../src/logo.png"  class="ml-5 "id="milk" style="width:250px; height:250px;"/>
+				</div>
+				
+				<div class="d-flex mb-5 col-6">
+					<button id="button" style="text-align:center; font-size:1.2rem; font-family:'Dolbomche_B'; background-color:#FFC300;" onclick="randomGenerator_pig(pig_arr)" class="btn btn-sm mb-4 col-4 hvr-grow-shadow"> 
+        			돼지고기 대체식단 추천  <br><br>Click
+    				</button> 
+    
+    				<img src="../src/logo.png"  class="ml-5 "id="pig" style="width:250px; height:250px;"/>
+				</div>
+				
+				<div class="d-flex mb-5 col-6">
+					<button id="button" style="text-align:center; font-size:1.3rem; font-family:'Dolbomche_B'; background-color:#FFC300;" onclick="randomGenerator_chicken(chicken_arr)" class="btn btn-sm mb-4 col-4 hvr-grow-shadow"> 
+        			닭고기 대체식단 추천 <br><br>Click
+    				</button> 
+    
+    				<img src="../src/logo.png"  class="ml-5 "id="chicken" style="width:250px; height:250px;"/>
+				</div>
+	
+				<div class="d-flex mb-5 col-6">
+					<button id="button" style="text-align:center; font-size:1.3rem; font-family:'Dolbomche_B'; background-color:#FFC300;" onclick="randomGenerator_peach(peach_arr)" class="btn btn-sm mb-4 col-4 hvr-grow-shadow"> 
+        			복숭아 대체식단 추천 <br><br>Click
+    				</button> 
+    
+    				<img src="../src/logo.png"  class="ml-5 "id="peach" style="width:250px; height:250px;"/>
+				</div>
+				
+				<div class="d-flex mb-5 col-6">
+					<button id="button" style="text-align:center; font-size:1.3rem; font-family:'Dolbomche_B'; background-color:#FFC300;" onclick="randomGenerator_fish(fish_arr)" class="btn btn-sm mb-4 col-4 hvr-grow-shadow"> 
+        			고등어 대체식단 추천 <br><br>Click
+    				</button> 
+    
+    				<img src="../src/logo.png"  class="ml-5 "id="fish" style="width:250px; height:250px;"/>
+				</div>
+				
+				
+			</div>
+			
+		</div>	
+	</div>
+	 
+      
+
+
+
+
+
+
+    <script>
+        let milk = document.getElementById("milk"); 
+		let wheat = document.getElementById("wheat");
+		let pig = document.getElementById("pig");
+		let chicken = document.getElementById("chicken");
+		let peach = document.getElementById("peach");
+		let fish = document.getElementById("fish");
+		
+		let wheat_arr = ["../src/wheat_1.png","../src/wheat_2.png","../src/wheat_3.png","../src/wheat_4.png","../src/wheat_5.png","../src/wheat_6.png","../src/wheat_7.png","../src/wheat_8.png"];
+        let milk_arr = ["../src/milk_1.png","../src/milk_2.png","../src/milk_3.png","../src/milk_4.png","../src/milk_5.png","../src/milk_6.png","../src/milk_7.png","../src/milk_8.png"];
+		let pig_arr = ["../src/pig_1.png","../src/pig_2.png","../src/pig_3.png","../src/pig_4.png","../src/pig_5.png","../src/pig_6.png","../src/pig_7.png","../src/pig_8.png"];
+		let chicken_arr = ["../src/chicken_1.png","../src/chicken_2.png","../src/chicken_3.png","../src/chicken_4.png","../src/chicken_5.png","../src/chicken_6.png","../src/chicken_7.png","../src/chicken_8.png"];
+		
+		let peach_arr = ["../src/peach_1.png","../src/peach_2.png","../src/peach_3.png","../src/peach_4.png","../src/peach_5.png","../src/peach_6.png","../src/peach_7.png","../src/peach_8.png"];
+		
+		let fish_arr = ["../src/fish_1.png","../src/fish_2.png","../src/fish_3.png","../src/fish_4.png","../src/fish_5.png","../src/fish_6.png","../src/fish_7.png","../src/fish_8.png"];
+		
+        function randomGenerator_wheat(arr) {
+            
+            let recommendation = arr[Math.floor(Math.random() * arr.length)] 
+		
+			// recommendation = Array.from(new Set(recommendation.split(', '))).toString();
+			// el.innerHTML = recommendation[0][0] + "," + recommendation[1][0];
+			document.getElementById("wheat").src = recommendation;
+        } 
+		
+		function randomGenerator_milk(arr) {
+            
+		let recommendation = arr[Math.floor(Math.random() * arr.length)] 
+		
+			// recommendation = Array.from(new Set(recommendation.split(', '))).toString();
+			// el.innerHTML = recommendation[0][0] + "," + recommendation[1][0];
+			document.getElementById("milk").src = recommendation;
+		}
+		
+		function randomGenerator_pig(arr) {
+            
+		let recommendation = arr[Math.floor(Math.random() * arr.length)] 
+		
+			// recommendation = Array.from(new Set(recommendation.split(', '))).toString();
+			// el.innerHTML = recommendation[0][0] + "," + recommendation[1][0];
+			document.getElementById("pig").src = recommendation;
+		}
+		
+		function randomGenerator_chicken(arr) {
+            
+		let recommendation = arr[Math.floor(Math.random() * arr.length)] 
+		
+			// recommendation = Array.from(new Set(recommendation.split(', '))).toString();
+			// el.innerHTML = recommendation[0][0] + "," + recommendation[1][0];
+			document.getElementById("chicken").src = recommendation;
+		}
+		
+		function randomGenerator_peach(arr) {
+            
+		let recommendation = arr[Math.floor(Math.random() * arr.length)] 
+		
+			// recommendation = Array.from(new Set(recommendation.split(', '))).toString();
+			// el.innerHTML = recommendation[0][0] + "," + recommendation[1][0];
+			document.getElementById("peach").src = recommendation;
+		}
+		
+		function randomGenerator_fish(arr) {
+            
+		let recommendation = arr[Math.floor(Math.random() * arr.length)] 
+		
+			// recommendation = Array.from(new Set(recommendation.split(', '))).toString();
+			// el.innerHTML = recommendation[0][0] + "," + recommendation[1][0];
+			document.getElementById("fish").src = recommendation;
+		}
+		
+		
+		
+		
+		
+		// img 파일로 교체
+		
+		// let myPix = ["../src/home_img_1.bmp","../src/home_img_2.bmp","../src/home_img_3.bmp"]
+		
+		// function choosePic() {
+		// 	var randomNum = Math.floor(Math.random() * myPix.length);
+		// 	document.getElementById("myPicture").src = myPix[randomNum];
+		// }
+		
+    </script> 
+
+
+
+
+

@@ -1,0 +1,377 @@
+<% layout('layouts/boilerplate')%>
+
+
+<style>
+#element:-webkit-full-screen {
+	width: 100%;
+	height: 100vh;
+	background-image:url('../src/monthly_front.png');
+	background-repeat: no-repeat;
+	background-size:contain;
+	background-position: center center;
+	margin: 0;
+}
+
+#element1:-webkit-full-screen {
+	width: 100%;
+	height: 100vh;
+	background-image:url('../src/monthly_back.png');
+	background-repeat: no-repeat;
+	background-size:contain;
+	background-position: center center;
+	margin: 0;
+}
+/* #element:-moz-full-screen {
+	background-color: pink;
+	margin: 0;
+}
+
+#element:-ms-fullscreen {
+	background-color: pink;
+	margin: 0;
+}
+
+#element:fullscreen { 
+	background-color: pink;
+	margin: 0;
+}
+ */
+
+</style>
+
+<div class="accordion justify-content-center" id="accordionExample">
+  <div class="accordion-item" style="">
+    <h2 class="accordion-header" id="headingOne">
+      <button
+        class="accordion-button"
+        type="button"
+        style="font-family:'Dolbomche_B';"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne"
+      >
+        &#x1F5D3 쉽게 보는 제10 급양대 일일 급식메뉴(1일~31일)
+      </button>
+    </h2>
+    <div
+      id="collapseOne"
+      class="accordion-collapse collapse show"
+      aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="container accordion-body d-flex justify-content-center">
+        <div class="container d-flex row justify-content-center">
+          <div
+            class="col-10 d-flex row justify-content-center align-items-center"
+            style="
+			  height:50vh;	   
+              font-family: 'Do Hyeon', sans-serif;
+              font-size: 1.5rem;
+			  background-color:#EAECEE;
+			  border-radius:7px;	   
+			  background-repeat: no-repeat;
+			  background-size: 100% 110%;
+			  background-position: center center;   
+            "
+          >
+            <div class="d-flex justify-content-center row col-12" style="font-size:2rem;" id="result">
+              1
+            </div>
+			<div class="d-flex justify-content-center row col-2" style="background-color:#FF5733; color:white; border-radius:4px;">
+				아침식사
+			 </div>
+            <div
+              class="d-flex justify-content-center row col-10"
+              style="font-size: 1.4rem; font-family:'S-CoreDream-3Light';"
+              id="morning"
+            >
+              우유
+			
+			  </div>
+			  <div class="d-flex justify-content-center row col-2" style="background-color:#FF5733; color:white; border-radius:4px;">
+				점심식사
+			 </div>
+			  <div
+              class="d-flex justify-content-center row col-10"
+              style="font-size: 1.4rem; font-family:'S-CoreDream-3Light';"
+              id="lunch"
+            >
+              스팸부대찌개, 버팔로윙, 농후 발효유, 단호박샐러드
+			
+			  </div>
+			  <div class="d-flex justify-content-center row col-2" style="background-color:#FF5733; color:white; border-radius:4px;">
+				저녁식사
+			 </div>
+			  <div
+              class="d-flex justify-content-center row col-10"
+              style="font-size: 1.4rem; font-family:'S-CoreDream-3Light';"
+              id="dinner"
+            >
+              밥, 순두부해물찌개, 닭순살야채조림, 부추겉절이, 깍두기
+			
+			  </div>
+			  
+			  
+          </div>
+
+			
+          <div
+            class=" d-flex row justify-content-center align-items-center mt-5"
+            style="
+              background-image: url('../src/memo.png');
+              height: 40vh;
+			  width: 65%;
+			  background-position: center center;
+		      background-size: contain;
+			  background-repeat: no-repeat;
+              font-family: 'Do Hyeon', sans-serif;
+              font-size: 1rem;
+            "
+			
+          >
+			  <div class="col-12 d-flex justify-content-center" style="font-family:'S-CoreDream-3Light'; font-size:1.5rem;">
+				  &#x1F91A 식품 알러지 항원
+			  </div>
+			 <div class="d-flex justify-content-center row col-3 px-1" style="font-size:1.5rem;">
+				아침식사:
+			 </div> 
+			<div class="d-flex flex-start col-8" id="morning_allergy" style="font-family:'S-CoreDream-3Light';">
+			
+			  </div>
+			<div class="d-flex justify-content-center row col-3" style="font-size:1.5rem;">
+				점심식사:
+			 </div>  
+            <div class="d-flex flex-start  col-8" id="lunch_allergy" style="font-family:'S-CoreDream-3Light';">
+			농후 발효유(우유),버팔로윙(닭고기)	
+			  </div>  
+			<div class="d-flex justify-content-center row col-3" style="font-size:1.5rem;">
+				저녁식사:
+			 </div>  
+			 <div class="d-flex flex-start  col-8" id="dinner_allergy" style="font-family:'S-CoreDream-3Light';">
+			순두부해물찌개(돼지고기),닭순살야채조림(밀,닭고기)
+			  </div>  
+			  
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center my-5">
+        <input
+          class="btn btn-dark mr-3"
+          type="button"
+          onclick='count("minus")'
+          value="이전메뉴"
+		  font-family="Dolbomche_B"	   
+        />
+        <input
+          class="btn btn-dark ml-3"
+          type="button"
+          onclick='count("plus")'
+          value="다음메뉴"
+		  font-family="Dolbomche_B"	   
+        />
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+		  style="font-family:'Dolbomche_B';"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        >
+          &#x1F4C5 한눈에 보는 제10 급양대 전체식단 메뉴
+        </button>
+      </h2>
+      <div
+        id="collapseTwo"
+        class="accordion-collapse collapse justify-content-center d-flex"
+        aria-labelledby="headingTwo"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="container accordion-body d-flex row">
+			
+		<div id="element">
+		<button id="go-button" class="btn btn-primary btn-sm my-3">전체화면으로 보기</button>
+	    </div>	
+			
+			
+          <img
+            class="img-fluid container"
+            src="../src/monthly_front.png"
+			style=""
+          />
+			
+		<div id="element1">
+		<button id="go-button1" class="btn btn-primary btn-sm my-3">전체화면으로 보기</button>
+	    </div>	 	
+			<img
+            class="img-fluid container"
+            src="../src/monthly_back.png"
+		 style=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+	
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript">
+
+	    let idx = 0;
+	    let parsed_data = <%- JSON.stringify(data) %>
+
+        function count(type)  {
+		  
+	      
+          // 결과를 표시할 element
+          const resultElement = document.getElementById('result');
+			
+			
+		  const morningElement = document.getElementById('morning');
+		  const lunchElement = document.getElementById('lunch');
+		  const dinnerElement = document.getElementById('dinner');
+			
+		  const morning_allergyElement = document.getElementById('morning_allergy');
+		  const lunch_allergyElement = document.getElementById('lunch_allergy');
+		  const dinner_allergyElement = document.getElementById('dinner_allergy');
+		
+		  // console.log(resultElement);
+		  // console.log(morningElement);
+		  // console.log(lunchElement);	
+		  // console.log(dinnerElement);
+		  // console.log(morning_allergyElement);
+		  // console.log(lunch_allergyElement);
+		  // console.log(dinner_allergyElement);
+
+
+          // 현재 화면에 표시된 값
+          let number = resultElement.innerText;
+		  let morning = morningElement.innerText;
+		  let lunch = lunchElement.innerText;	
+		  let dinner = dinnerElement.innerText;
+		  let morning_allergy = morning_allergyElement.innerText;
+	      let lunch_allergy = lunch_allergyElement.innerText;
+		  let dinner_allergy = dinner_allergyElement.innerText;
+
+		  // console.log(morning);
+		  // console.log(lunch);	
+		  // console.log(dinner);
+		  // console.log(morning_allergy);
+		  // console.log(lunch_allergy);
+		  // console.log(dinner_allergy);
+		  // console.log(parsed_data[0].food);
+
+
+          // 더하기/빼기
+          if(type === 'plus' & number < 31) {
+            number = parseInt(number) + 1;
+			idx = idx + 1;
+          }else if(type === 'minus' & number > 1)  {
+            number = parseInt(number) - 1;
+			idx = idx - 1;
+          }else {
+			  try{
+				  swal({
+				  title: "Appetite Limitation Free",
+				  text: '날짜선택은 1일부터 31일까지만 가능합니다',
+				  icon: "info"
+			  });
+			  
+			  confirm(swal);
+			  }
+			  catch{}
+		  }
+			
+		  console.log(idx);
+		  
+          // 결과 출력
+          resultElement.innerText = number;
+		  morningElement.innerText = parsed_data[idx].morning
+		  lunchElement.innerText = parsed_data[idx].lunch	
+		  dinnerElement.innerText = parsed_data[idx].dinner
+		  morning_allergyElement.innerText = parsed_data[idx].morning_alg
+		  lunch_allergyElement.innerText = parsed_data[idx].lunch_alg
+		  dinner_allergyElement.innerText = parsed_data[idx].dinner_alg
+
+        }
+  </script>
+	
+  <script>
+
+/* Get into full screen */
+function GoInFullscreen(element) {
+	if(element.requestFullscreen)
+		element.requestFullscreen();
+	else if(element.mozRequestFullScreen)
+		element.mozRequestFullScreen();
+	else if(element.webkitRequestFullscreen)
+		element.webkitRequestFullscreen();
+	else if(element.msRequestFullscreen)
+		element.msRequestFullscreen();
+}
+
+/* Get out of full screen */
+function GoOutFullscreen() {
+	if(document.exitFullscreen)
+		document.exitFullscreen();
+	else if(document.mozCancelFullScreen)
+		document.mozCancelFullScreen();
+	else if(document.webkitExitFullscreen)
+		document.webkitExitFullscreen();
+	else if(document.msExitFullscreen)
+		document.msExitFullscreen();
+}
+
+/* Is currently in full screen or not */
+function IsFullScreenCurrently() {
+	var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+	
+	// If no element is in full-screen
+	if(full_screen_element === null)
+		return false;
+	else
+		return true;
+}
+
+$("#go-button").on('click', function() {
+	if(IsFullScreenCurrently())
+		GoOutFullscreen();
+	else
+		GoInFullscreen($("#element").get(0));
+});
+	  
+$("#go-button1").on('click', function() {
+	if(IsFullScreenCurrently())
+		GoOutFullscreen();
+	else
+		GoInFullscreen($("#element1").get(0));
+});	  
+
+$(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function() {
+	if(IsFullScreenCurrently()) {
+		$("#go-button").text('전체화면 해제하기');
+	}
+	else {
+		$("#go-button").text('전체화면으로 보기');
+	}
+});
+
+	  
+$(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function() {
+	if(IsFullScreenCurrently()) {
+		$("#go-button1").text('전체화면 해제하기');
+	}
+	else {
+		$("#go-button1").text('전체화면으로 보기');
+	}
+});	  
+</script>
+</div>
